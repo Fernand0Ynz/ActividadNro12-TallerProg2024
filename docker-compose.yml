@@ -13,8 +13,8 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: gonzalezj
-      POSTGRES_PASSWORD: Jesus556
+      POSTGRES_USER: Fernando
+      POSTGRES_PASSWORD: Fer12345678
       POSTGRES_DB: Prueba
 
   adminer:
@@ -22,3 +22,17 @@ services:
     restart: always
     ports:
       - 8080:8080
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: Fer12345678
+    ports:
+      - 3300:3300  
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Fer12345678
